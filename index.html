@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kenno | Portfolio</title>
-    <link rel="shortcut icon" href="./app-development.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./app-development.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header>
-      <div class="container">
-        <h1>Kenno</h1>
+      <div class="container header-container">
+        <h1>K3NO</h1>
         <nav>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
@@ -21,43 +25,63 @@
       </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
-      <div class="container hero-content">
-        <img src="profile.jpg" alt="Kenno Profile" class="profile-img" />
+      <div class="container hero-container">
         <div>
-          <h2>Hello, I'm KennoS</h2>
+          <img src="profile.jpg" alt="Kenno Profile" class="profile-img" />
+        </div>
+        <div class="hero-text">
+          <h2>Hello, I'm <span>Kenno</span></h2>
           <p>
-            I'm a Front-End Developer and Graphic Designer. I create clean, minimal, and functional digital experiences.
+            A Front-End Developer & Graphic Designer crafting clean, minimal,
+            and functional digital experiences.
           </p>
+          <div><a href="#projects" class="btn">View My Work</a></div>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
       <div class="container">
         <h2>About Me</h2>
         <p>
-          I'm passionate about visual design and creating beautiful, user-friendly web interfaces. My background in graphic design taught me to care deeply about color, layout, and typography. 
-          Lately, I’ve become fascinated with front-end development—bringing designs to life through code and crafting smooth, interactive experiences using HTML, CSS, and JavaScript.
+          I’m passionate about design and how visuals connect with users. My
+          journey started in <strong>graphic design</strong>, where I learned
+          how to balance color, layout, and emotion. Recently, I’ve grown deeply
+          interested in <strong>front-end development</strong>—transforming
+          ideas into living, interactive web experiences using
+          <em>HTML, CSS, and JavaScript</em>.
         </p>
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
         <h2>Projects</h2>
-        <div class="project">
-          <h3>Coming Soon 🚧</h3>
-          <p>I'm currently working on new projects combining design and front-end development. Stay tuned!</p>
+        <div class="project-grid">
+          <div class="project-card">
+            <h3>Coming Soon 🚧</h3>
+            <p>
+              Currently working on projects combining visual design and
+              front-end development. Stay tuned!
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <h2>Contact</h2>
         <p>
-          Email: <a href="mailto:kennoadrianricaplaza@gmail.com">kennoadrianricaplaza@gmail.com</a>
+          Let's collaborate or chat! Reach me at
+          <a href="mailto:kennoadrianricaplaza@gmail.com"
+            >kennoadrianricaplaza@gmail.com</a
+          >
         </p>
       </div>
     </section>
