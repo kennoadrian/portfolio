@@ -69,16 +69,49 @@ header {
   align-items: center;
 }
 
+/* Nav styles */
+nav {
+  position: relative;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Hamburger button */
+#nav-toggle {
+  display: none;
+  background: var(--secondary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1.5rem;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+#nav-toggle:hover {
+  background: var(--accent);
+}
+
+/* Header title */
 header h1 {
   font-size: 1.8rem;
   letter-spacing: 1px;
 }
 
-nav a {
-  margin-left: 1.5rem;
-  font-weight: 600;
-}
-
+/* Theme toggle button inside menu on desktop */
 #theme-toggle {
   background: var(--secondary);
   border: none;
@@ -86,12 +119,15 @@ nav a {
   border-radius: var(--radius);
   cursor: pointer;
   transition: background 0.3s;
+  font-size: 1rem;
+  line-height: 1;
+  /* margin-left: 1rem;  removed margin to align nicely */
 }
 #theme-toggle:hover {
   background: var(--accent);
 }
 
-/* Hero Section */
+/* HERO SECTION */
 .hero {
   background: var(--muted);
   padding: 6rem 0;
@@ -100,17 +136,17 @@ nav a {
 .hero-container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly; /* This distributes space evenly around the items */
-  gap: 2rem; /* Add some gap between items */
-  flex-wrap: wrap; /* Wrap on smaller screens */
+  justify-content: space-evenly;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .hero-container > div {
-  flex: 1 1 300px; /* grow, shrink, basis */
-  max-width: 400px; /* Optional: max width per item */
+  flex: 1 1 300px;
+  max-width: 400px;
   display: flex;
-  justify-content: center; /* Center content inside each div horizontally */
-  flex-direction: column; /* Stack image/text vertically in their own div */
+  justify-content: center;
+  flex-direction: column;
 }
 
 .profile-img {
@@ -122,7 +158,9 @@ nav a {
   object-fit: cover;
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 0 auto; /* Center image in its div */
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
 }
 
 .profile-img::before {
@@ -182,7 +220,9 @@ nav a {
   transition: 0.3s ease;
   font-weight: 600;
   font-size: 1rem;
+  text-align: center;
 }
+
 .btn:hover {
   opacity: 0.85;
 }
@@ -215,22 +255,32 @@ section h2 {
   padding: 1.5rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.05),
+    0 10px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-7px);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .project-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: var(--primary);
 }
 
 .project-card p {
   color: var(--muted-foreground);
-  font-size: 1rem;
+  font-size: 1.05rem;
+  flex-grow: 1;
 }
 
 /* Contact */
@@ -253,10 +303,12 @@ footer {
 }
 
 /* Responsive */
+
+/* Medium screens (tablet) */
 @media (max-width: 900px) {
   .hero-container {
-    flex-direction: column;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .profile-img {
@@ -273,12 +325,89 @@ footer {
     text-align: center;
   }
 
-  .hero-container {
-    justify-content: center; /* center on mobile */
-  }
   .hero-container > div {
     max-width: 100%;
     flex-basis: 100%;
     margin-bottom: 2rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 600px) {
+  /* Navbar */
+  #nav-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column; /* vertical */
+    position: absolute;
+    background: var(--card);
+    top: 100%;
+    right: 0;
+    width: 180px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    padding: 0.5rem 0;
+    transition: right 0.3s ease;
+    z-index: 20;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    display: block;
+  }
+
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  nav ul li a,
+  nav ul li button#theme-toggle {
+    display: block;
+    padding: 0.75rem 1.2rem;
+    white-space: nowrap;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--primary);
+  }
+
+  nav ul li a:hover,
+  nav ul li button#theme-toggle:hover {
+    background: var(--muted);
+  }
+
+  /* Hero Section */
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .btn {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hero-container > div {
+    max-width: 100%;
+    flex-basis: 100%;
   }
 }

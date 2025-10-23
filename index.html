@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kenno | Portfolio</title>
     <link
       rel="shortcut icon"
@@ -17,11 +17,14 @@
       <div class="container header-container">
         <h1>K3NO</h1>
         <nav>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+          <ul id="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button id="theme-toggle" aria-label="Toggle theme">🌓</button></li>
+          </ul>
         </nav>
-        <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
       </div>
     </header>
 
@@ -63,11 +66,22 @@
         <h2>Projects</h2>
         <div class="project-grid">
           <div class="project-card">
-            <h3>Coming Soon 🚧</h3>
+            <h3>Portfolio Website</h3>
+            <p>A sleek and responsive personal portfolio website.</p>
+          </div>
+          <div class="project-card">
+            <h3>Weather App</h3>
+            <p>A front-end app displaying weather info using API data.</p>
+          </div>
+          <div class="project-card">
+            <h3>Task Manager</h3>
             <p>
-              Currently working on projects combining visual design and
-              front-end development. Stay tuned!
+              A simple task management app with drag and drop functionality.
             </p>
+          </div>
+          <div class="project-card">
+            <h3>Blog Template</h3>
+            <p>A minimal blog template focused on readability and design.</p>
           </div>
         </div>
       </div>
@@ -93,8 +107,15 @@
     </footer>
 
     <script>
-      const toggle = document.getElementById("theme-toggle");
-      toggle.addEventListener("click", () => {
+      const themeToggle = document.getElementById("theme-toggle");
+      const navToggle = document.getElementById("nav-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      themeToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark");
       });
     </script>
