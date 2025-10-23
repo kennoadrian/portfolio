@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="glass">
       <div class="container header-container">
         <h1>K3NO</h1>
         <nav>
@@ -22,7 +22,9 @@
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><button id="theme-toggle" aria-label="Toggle theme">🌓</button></li>
+            <li>
+              <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -58,41 +60,76 @@
           <em>HTML, CSS, and JavaScript</em>.
         </p>
       </div>
+
+      <!-- Bento box skills -->
+      <div class="skills-grid">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">PHP</div>
+        <div class="skill">Canva</div>
+        <div class="skill">Bootstrap</div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
-   <section id="projects">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="pscreenshot.jpg" alt="Portfolio Website Screenshot" />
-        <h3>Portfolio Website</h3>
-        <p>A sleek and responsive personal portfolio website.</p>
-        <a href="#" class="btn view-btn" target="_blank" rel="noopener noreferrer">View</a>
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="pscreenshot.jpg" alt="Portfolio Website Screenshot" />
+            <h3>Portfolio Website</h3>
+            <p>A sleek and responsive personal portfolio website.</p>
+            <a
+              href="#"
+              class="btn view-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View</a
+            >
+          </div>
+          <div class="project-card">
+            <img src="weather-apps.avif" alt="Weather App Screenshot" />
+            <h3>Weather App</h3>
+            <p>A front-end app displaying weather info using API data.</p>
+            <a
+              href="#"
+              class="btn view-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View</a
+            >
+          </div>
+          <div class="project-card">
+            <img src="taskm.png" alt="Task Manager Screenshot" />
+            <h3>Task Manager</h3>
+            <p>
+              A simple task management app with drag and drop functionality.
+            </p>
+            <a
+              href="#"
+              class="btn view-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View</a
+            >
+          </div>
+          <div class="project-card">
+            <img src="blogte.jpg" alt="Blog Template Screenshot" />
+            <h3>Blog Template</h3>
+            <p>A minimal blog template focused on readability and design.</p>
+            <a
+              href="#"
+              class="btn view-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View</a
+            >
+          </div>
+        </div>
       </div>
-      <div class="project-card">
-        <img src="weather-apps.avif" alt="Weather App Screenshot" />
-        <h3>Weather App</h3>
-        <p>A front-end app displaying weather info using API data.</p>
-        <a href="#" class="btn view-btn" target="_blank" rel="noopener noreferrer">View</a>
-      </div>
-      <div class="project-card">
-        <img src="taskm.png" alt="Task Manager Screenshot" />
-        <h3>Task Manager</h3>
-        <p>A simple task management app with drag and drop functionality.</p>
-        <a href="#" class="btn view-btn" target="_blank" rel="noopener noreferrer">View</a>
-      </div>
-      <div class="project-card">
-        <img src="blogte.jpg" alt="Blog Template Screenshot" />
-        <h3>Blog Template</h3>
-        <p>A minimal blog template focused on readability and design.</p>
-        <a href="#" class="btn view-btn" target="_blank" rel="noopener noreferrer">View</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- CONTACT -->
     <section id="contact">

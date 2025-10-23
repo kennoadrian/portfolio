@@ -41,6 +41,66 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Glass effect on navbar when scrolled */
+header.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode glass effect (if you have dark theme) */
+body.dark header.glass {
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Bento box skills container */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-left: 120px;
+  max-width: 600px;
+  justify-items: center; /* Center skills horizontally */
+}
+
+/* Individual skill tag */
+.skill {
+  /* background-color: var(--secondary, #ebebeb); */
+  color: var(--primary, #000);
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  cursor: default;
+  border: 1px solid var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  max-width: 140px;
+  user-select: none;
+}
+
+/* Hover effect - Light mode */
+.skill:hover {
+  background-color: #222; /* Full dark background */
+  color: #fff; /* White text */
+  border-color: #111; /* Darker border */
+}
+
+/* Hover effect - Dark mode */
+body.dark .skill:hover {
+  background-color: #444; /* Slightly lighter dark background */
+  color: #fff;
+  border-color: #666;
+}
+
 /* Links */
 a {
   color: var(--primary);
@@ -121,7 +181,6 @@ header h1 {
   transition: background 0.3s;
   font-size: 1rem;
   line-height: 1;
-  /* margin-left: 1rem;  removed margin to align nicely */
 }
 #theme-toggle:hover {
   background: var(--accent);
@@ -312,6 +371,15 @@ section h2 {
 }
 
 /* Contact */
+#contact {
+  background-color: #d0d2d369;
+}
+
+body.dark #contact {
+  background-color: #4b4d4e69;
+}
+
+
 #contact a {
   color: var(--primary);
   font-weight: 600;
@@ -361,7 +429,7 @@ footer {
 }
 
 /* Small screens (mobile) */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   /* Navbar */
   #nav-toggle {
     display: block;
@@ -383,6 +451,16 @@ footer {
     z-index: 20;
   }
 
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-left: 0;
+
+    max-width: 600px;
+    justify-items: center;
+  }
   nav ul.active {
     display: flex;
   }
