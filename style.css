@@ -464,6 +464,11 @@ footer {
     display: block;
   }
 
+  video {
+    width: 400px;
+    margin: 12px;
+  }
+
   nav ul {
     display: none;
     flex-direction: column; /* vertical */
